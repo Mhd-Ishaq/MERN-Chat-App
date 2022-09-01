@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json()); 
 
 app.get("/", (req, res) => {
-  res.send("hello world");
+  res.send("hi there");
 });
 
 app.listen(5000,()=>{
