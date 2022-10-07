@@ -59,7 +59,8 @@ const Login = () => {
     } catch (error) {
       toast({
         title: "Error Occured!",
-        description: error.response.data.message,
+        // description: error.response.data.message,
+        description: error,
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -71,20 +72,22 @@ const Login = () => {
 
   return (
     <VStack spacing="10px">
-      <FormControl id="email" isRequired>
+
+      <FormControl id="email-1" isRequired>
         <FormLabel>Email Address</FormLabel>
         <Input
-          value={email}
           type="email"
           placeholder="Enter Your Email Address"
+          // value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
-      <FormControl id="password" isRequired>
+
+      <FormControl id="password-1" isRequired>
         <FormLabel>Password</FormLabel>
         <InputGroup size="md">
           <Input
-            value={password}
+            // value={password}
             onChange={(e) => setPassword(e.target.value)}
             type={show ? "text" : "password"}
             placeholder="Enter password"
@@ -96,6 +99,7 @@ const Login = () => {
           </InputRightElement>
         </InputGroup>
       </FormControl>
+
       <Button
         colorScheme="blue"
         width="100%"
@@ -105,6 +109,7 @@ const Login = () => {
       >
         Login
       </Button>
+
       <Button
         variant="solid"
         colorScheme="red"
@@ -116,6 +121,7 @@ const Login = () => {
       >
         Get Guest User Credentials
       </Button>
+
     </VStack>
   );
 };
